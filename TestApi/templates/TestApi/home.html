@@ -1,0 +1,28 @@
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+<h2>KAWAL COVID-19</h2>
+
+<hr>
+<div class="container">
+            <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Provinsi</th>
+                        <th scope="col">Positif</th>
+                        <th scope="col">Sembuh</th>
+                        <th scope="col">Meninggal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+{% for data in name%}
+                        <th scope="row">{{data.attributes.FID}}</th>
+                        <td>{{data.attributes.Provinsi}}</td>
+                        <td>{{ data.attributes.Kasus_Posi }}</td>
+                        <td>{{ data.attributes.Kasus_Semb }}</td>
+                        <td>{{ data.attributes.Kasus_Meni }}</td>
+                      </tr>
+{% endfor %}
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+{% endblock %}
